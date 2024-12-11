@@ -5,11 +5,12 @@ import {StyleSheet} from "react-native";
 // F8FAFC
 // D9EAFD
 // BCCCDC
-// 9AA6B2
+// 9AA6B2 -
+// CC2B52 -red
 
 export const styles = StyleSheet.create({
 	container: {
-		paddingVertical: 10,
+		padding: 10,
 		alignItems: "center",
 		justifyContent: "center",
 	},
@@ -20,16 +21,66 @@ export const styles = StyleSheet.create({
 	headerTitle: {
 		fontSize: 22,
 	},
+	containerListScreen: {
+		padding: 10,
+		flex: 1,
+	},
+	listClients: {
+		width: "100%",
+		rowGap: 20,
+	},
 	listControlPanel: {
+		position: "absolute",
+		right: 20,
+		bottom: 20,
+		maxHeight: 55,
+		maxWidth: 55,
 		flexDirection: "row",
-		gap: 20,
+		zIndex: 10,
 	},
 	listControlBtns: {
-		padding: 20,
-		maxWidth: 125,
+		justifyContent: "center",
+		alignItems: "center",
+		// maxWidth: 100,
+		//
+		width: 50,
+		height: 50,
 		backgroundColor: "#BCCCDC",
+		borderRadius: 15,
 	},
 	listControlBtnsText: {
 		fontSize: 15,
+	},
+	itemContainer: {
+		flexDirection: "row",
+		justifyContent: "space-between",
+		// backgroundColor: "#F8FAFC",
+		height: 75,
+		borderWidth: 0.5,
+		borderRadius: 15,
+		marginBottom: 5,
+	},
+	itemLookArea: {
+		flex: 1,
+		backgroundColor: "#F8FAFC",
+		borderTopLeftRadius: 15,
+		borderBottomLeftRadius: 15,
+		justifyContent: "center",
+		padding: 5,
+	},
+	itemDelBtn: {
+		width: 25,
+		borderTopRightRadius: 15,
+		borderBottomRightRadius: 15,
+		justifyContent: "center",
+		backgroundColor: "#CC2B52",
+	},
+	itemDelBtnImg: {
+		width: 20,
+		height: 20,
+		fill: "#fff",
+	},
+	itemTextName: {
+		fontSize: 20,
 	},
 });
