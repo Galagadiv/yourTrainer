@@ -1,6 +1,6 @@
 import {StatusBar} from "expo-status-bar";
 import {Text, View} from "react-native";
-import {styles} from "./styles";
+import {styles} from "../styles/styles";
 import {useSafeAreaInsets} from "react-native-safe-area-context";
 
 export default function Header() {

@@ -1,15 +1,19 @@
 import React, {useState} from "react";
-import {styles} from "./styles";
-import {Text, View, FlatList, Pressable} from "react-native";
+import {styles} from "../styles/styles";
+import {Text, View, FlatList, Pressable, Modal, TextInput} from "react-native";
 import DeleteIcon from "../img/icon-delete.svg";
 import AddIcon from "../img/icon-add.svg";
 
 export function DynamicList() {
 	const [clients, setClients] = useState([]);
+	const [addModal, setAddModal] = useState(false);
+
+	const [clientName, onChangeText] = React.useState("Useless Text");
 
 	// Додати елемент
 	const addItem = () => {
-		setClients([...clients, `Item ${clients.length + 1}`]);
+		setClients([...clients, clientName]);
+		setAddModal(true);
 	};
 
 	// Видалити конкретний елемент
@@ -24,6 +28,27 @@ export function DynamicList() {
 					<AddIcon style={styles.itemDelBtnImg} />
 				</Pressable>
 			</View>
+			<Modal
+				style={styles.addModalcontainer}
+				animationType="slide"
+				transparent={true}
+				visible={addModal}
+				onRequestClose={() => {
+					setAddModal(false);
+				}}
+			>
+				<TextInput
+					//   style={styles.addModalInput}
+					onChangeText={onChangeText}
+					value={clientName}
+				/>
+				<Pressable
+					// style={[styles.button, styles.buttonClose]}
+					onPress={() => setAddModal(false)}
+				>
+					<Text style={styles.textStyle}>Hide Modal</Text>
+				</Pressable>
+			</Modal>
 			<FlatList
 				style={styles.listClients}
 				data={clients}
@@ -49,7 +74,6 @@ export function Item({item, index, onDelete}) {
 				<Text style={styles.itemTextDate}>Date</Text>
 			</Pressable>
 			<Pressable onPress={onDelete} style={styles.itemDelBtn}>
-				{/* <Image style={styles.itemDelBtnImg} source={require("../img/icon-delete.svg")}></Image> */}
 				<DeleteIcon style={styles.itemDelBtnImg} />
 			</Pressable>
 		</View>

@@ -41,8 +41,6 @@ export const styles = StyleSheet.create({
 	listControlBtns: {
 		justifyContent: "center",
 		alignItems: "center",
-		// maxWidth: 100,
-		//
 		width: 50,
 		height: 50,
 		backgroundColor: "#BCCCDC",
@@ -79,6 +77,14 @@ export const styles = StyleSheet.create({
 		width: 20,
 		height: 20,
 		fill: "#fff",
+	},
+	addModalcontainer: {
+		// width: 100,
+		// height: 100,
+		backgroundColor: "#CC2B52",
+		position: "absolute",
+		// top: 50,
+		// left: 50,
 	},
 	itemTextName: {
 		fontSize: 20,
